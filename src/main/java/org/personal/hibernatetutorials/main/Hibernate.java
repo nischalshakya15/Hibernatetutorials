@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
 import org.personal.hibernatetutorials.entity.Address;
 import org.personal.hibernatetutorials.entity.Student;
 
@@ -14,43 +13,42 @@ public class Hibernate {
 
 	private static final SessionFactory sf = new Configuration().configure().buildSessionFactory();
 	private final static Logger logger = Logger.getLogger(Hibernate.class);
-
-	private static void closeSession(Session session) {
-		session.getTransaction().commit();
-		session.close();
-	}
+	private final static String tab = "\t";
 
 	private static Session openSession() {
 		Session session = sf.openSession();
 		session.beginTransaction();
 		return session;
 	}
+	
+	private static void closeSession(Session session) {
+		session.getTransaction().commit();
+		session.close();
+	}
 
 	public static void insert() {
 		Session session = openSession();
-		Student student1 = new Student();
-		student1.setFname("nischal");
-		student1.setLname("shakya");
-
-		Address perAddress = new Address("nepal", "kathmandu");
-		Address tempAddress = new Address("usa", "new york");
-
-		student1.setTempAddress(tempAddress);
-		student1.setPerAddress(perAddress);
-		session.save(student1);
+		Address addressOne = new Address("kathmandu", "mustang");
+		Address addressTwo = new Address("pokhara", "butwal");
+		Student studentInsert = new Student();
+		studentInsert.setFname("Nischal");
+		studentInsert.setLname("Shakya");
+		studentInsert.getListofAddress().add(addressOne);
+		studentInsert.getListofAddress().add(addressTwo);
+		session.save(studentInsert);
 		closeSession(session);
 	}
 
 	public static void update() {
 		Session session = openSession();
 		Student studentUpdate = session.get(Student.class, 1);
-
-		System.out.println(studentUpdate.toString());
 		if (studentUpdate != null) {
 			studentUpdate.setFname("rashik");
 			studentUpdate.setLname("shakya");
-			studentUpdate.getPerAddress().setCity("patan");
-			studentUpdate.getPerAddress().setCountry("nepal");
+			Address studentAddress = studentUpdate.getListofAddress().get(0);
+			studentAddress.setPermanentAddress("patan");
+			studentAddress.setTemporaryAddress("kathmandu");
+			studentUpdate.getListofAddress().add(studentAddress);
 			session.update(studentUpdate);
 		}
 		closeSession(session);
@@ -65,19 +63,15 @@ public class Hibernate {
 		closeSession(session);
 	}
 
-	@SuppressWarnings("rawtypes")
 	public static void display() {
 		Session session = openSession();
-		Query query = session.createQuery("from Student");
 		@SuppressWarnings("unchecked")
-		List<Student> studentList = query.getResultList();
-		logger.info("ID\t" + "FirstName\t" + "LastName\t" + "PermanentCity\t" + "PermanentCountry\t" + "TemporaryCity\t"
-				+ "TemporaryCountry");
+		List<Student> studentList = session.createQuery("from Student").getResultList();
 		studentList.stream().forEach((listOfStudent) -> {
-			logger.info(listOfStudent.getId() + "\t" + listOfStudent.getFname() + "\t\t" + listOfStudent.getLname()
-					+ "\t\t" + listOfStudent.getPerAddress().getCity() + "\t\t"
-					+ listOfStudent.getPerAddress().getCountry() + "\t\t" + listOfStudent.getTempAddress().getCity()
-					+ "\t\t" + listOfStudent.getTempAddress().getCountry());
+			listOfStudent.getListofAddress().stream().forEach(listOfAddress -> {
+				logger.info(listOfStudent.getId() + tab + listOfStudent.getFname() + tab + listOfStudent.getLname()
+						+ tab + listOfAddress.getPermanentAddress() + tab + listOfAddress.getTemporaryAddress());
+			});
 		});
 
 	}
@@ -89,7 +83,6 @@ public class Hibernate {
 		display();
 		delete();
 		display();
-
 	}
 
 }

@@ -1,16 +1,17 @@
 package org.personal.hibernatetutorials.entity;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
-import javax.persistence.Embedded;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Table;
-
-
 
 @Entity
 @Table(name = "studenttbl")
@@ -21,49 +22,30 @@ public class Student {
 	@Column(name = "studentid")
 	private int id;
 
-	@Column(name = "firstname")
+	@Column(name = "firstname", length = 20)
 	private String fname;
 
-	@Column(name = "lastname")
+	@Column(name = "lastname", length = 20)
 	private String lname;
-
-	@Embedded
-	@AttributeOverrides({ @AttributeOverride(name = "country", column = @Column(name = "per_country")),
-			@AttributeOverride(name = "city", column = @Column(name = "per_city")) })
-	private Address perAddress;
-
-	@Embedded
-	@AttributeOverrides({ @AttributeOverride(name = "country", column = @Column(name = "temp_country")),
-			@AttributeOverride(name = "city", column = @Column(name = "temp_city")) })
-	private Address tempAddress;
-		
+	
+	@ElementCollection
+	@JoinTable(name = "address", joinColumns = @JoinColumn(name = "studentid"))	
+	List<Address> listofAddress = new ArrayList<>();
+	
 	public Student() {
 		super();
 	}
 	
-	public Student(String fname, String lname, Address perAddress, Address tempAddress) {
+	
+
+	public Student(String fname, String lname, List<Address> listofAddress) {
 		super();
 		this.fname = fname;
 		this.lname = lname;
-		this.perAddress = perAddress;
-		this.tempAddress = tempAddress;
+		this.listofAddress = listofAddress;
 	}
 
-	public Address getPerAddress() {
-		return perAddress;
-	}
 
-	public void setPerAddress(Address perAddress) {
-		this.perAddress = perAddress;
-	}
-
-	public Address getTempAddress() {
-		return tempAddress;
-	}
-
-	public void setTempAddress(Address tempAddress) {
-		this.tempAddress = tempAddress;
-	}
 
 	public int getId() {
 		return id;
@@ -88,4 +70,14 @@ public class Student {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
+
+	public List<Address> getListofAddress() {
+		return listofAddress;
+	}
+
+	public void setListofAddress(List<Address> listofAddress) {
+		this.listofAddress = listofAddress;
+	}
+	
+	
 }

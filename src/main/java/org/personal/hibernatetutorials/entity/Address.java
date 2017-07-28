@@ -8,42 +8,37 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Address {
 
-	@Column(name = "student_country")
-	private String country;
-	@Column(name = "student_city")
-	private String city;
+	@Column(name = "peraddress", length = 20)
+	private String permanentAddress;
 	
-	@Override
-	public String toString() {
-		return "Address [country=" + country + ", city=" + city + "]";
-	}
-
-	public Address(String country, String city) {
-		super();
-		this.country = country;
-		this.city = city;
-	}
-
-	public Address() {
+	@Column(name = "tempaddress", length = 20)
+	private String temporaryAddress;
+	
+	public Address(){
 		super();
 	}
 
-	public String getCountry() {
-		return country;
+	public Address(String permanentAddress, String temporaryAddress) {
+		super();
+		this.permanentAddress = permanentAddress;
+		this.temporaryAddress = temporaryAddress;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public String getPermanentAddress() {
+		return permanentAddress;
 	}
 
-	public String getCity() {
-		return city;
+	public void setPermanentAddress(String permanentAddress) {
+		this.permanentAddress = permanentAddress;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public String getTemporaryAddress() {
+		return temporaryAddress;
 	}
-	
+
+	public void setTemporaryAddress(String temporaryAddress) {
+		this.temporaryAddress = temporaryAddress;
+	}
 	
 
 }
