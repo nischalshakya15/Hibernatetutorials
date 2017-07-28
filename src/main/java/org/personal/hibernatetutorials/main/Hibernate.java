@@ -31,20 +31,26 @@ public class Hibernate {
 		Student student1 = new Student();
 		student1.setFname("nischal");
 		student1.setLname("shakya");
-		Address address1 = new Address("kathmandu", "jumla");
-		student1.setAddress(address1);
+
+		Address perAddress = new Address("nepal", "kathmandu");
+		Address tempAddress = new Address("usa", "new york");
+
+		student1.setTempAddress(tempAddress);
+		student1.setPerAddress(perAddress);
 		session.save(student1);
 		closeSession(session);
 	}
 
 	public static void update() {
 		Session session = openSession();
-		Student studentUpdate = session.get(Student.class, 1);		
+		Student studentUpdate = session.get(Student.class, 1);
+
+		System.out.println(studentUpdate.toString());
 		if (studentUpdate != null) {
 			studentUpdate.setFname("rashik");
 			studentUpdate.setLname("shakya");
-			studentUpdate.getAddress().setPermanentAddress("jumla");
-			studentUpdate.getAddress().setTemporaryAddress("kathmandu");
+			studentUpdate.getPerAddress().setCity("patan");
+			studentUpdate.getPerAddress().setCountry("nepal");
 			session.update(studentUpdate);
 		}
 		closeSession(session);
@@ -65,11 +71,13 @@ public class Hibernate {
 		Query query = session.createQuery("from Student");
 		@SuppressWarnings("unchecked")
 		List<Student> studentList = query.getResultList();
-		logger.info("ID\t" + "FirstName\t" + "LastName\t" + "PermanentAddress\t" + "TemporaryAddress");
+		logger.info("ID\t" + "FirstName\t" + "LastName\t" + "PermanentCity\t" + "PermanentCountry\t" + "TemporaryCity\t"
+				+ "TemporaryCountry");
 		studentList.stream().forEach((listOfStudent) -> {
 			logger.info(listOfStudent.getId() + "\t" + listOfStudent.getFname() + "\t\t" + listOfStudent.getLname()
-					+ "\t\t" + listOfStudent.getAddress().getPermanentAddress() + "\t\t\t"
-					+ listOfStudent.getAddress().getTemporaryAddress());
+					+ "\t\t" + listOfStudent.getPerAddress().getCity() + "\t\t"
+					+ listOfStudent.getPerAddress().getCountry() + "\t\t" + listOfStudent.getTempAddress().getCity()
+					+ "\t\t" + listOfStudent.getTempAddress().getCountry());
 		});
 
 	}
@@ -81,6 +89,7 @@ public class Hibernate {
 		display();
 		delete();
 		display();
+
 	}
 
 }

@@ -1,5 +1,7 @@
 package org.personal.hibernatetutorials.entity;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -7,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name = "studenttbl")
@@ -24,11 +28,41 @@ public class Student {
 	private String lname;
 
 	@Embedded
-	private Address address;
+	@AttributeOverrides({ @AttributeOverride(name = "country", column = @Column(name = "per_country")),
+			@AttributeOverride(name = "city", column = @Column(name = "per_city")) })
+	private Address perAddress;
 
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", fname=" + fname + ", lname=" + lname + ", address=" + address + "]";
+	@Embedded
+	@AttributeOverrides({ @AttributeOverride(name = "country", column = @Column(name = "temp_country")),
+			@AttributeOverride(name = "city", column = @Column(name = "temp_city")) })
+	private Address tempAddress;
+		
+	public Student() {
+		super();
+	}
+	
+	public Student(String fname, String lname, Address perAddress, Address tempAddress) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
+		this.perAddress = perAddress;
+		this.tempAddress = tempAddress;
+	}
+
+	public Address getPerAddress() {
+		return perAddress;
+	}
+
+	public void setPerAddress(Address perAddress) {
+		this.perAddress = perAddress;
+	}
+
+	public Address getTempAddress() {
+		return tempAddress;
+	}
+
+	public void setTempAddress(Address tempAddress) {
+		this.tempAddress = tempAddress;
 	}
 
 	public int getId() {
@@ -53,32 +87,5 @@ public class Student {
 
 	public void setLname(String lname) {
 		this.lname = lname;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	public Student(int id, String fname, String lname, Address address) {
-		super();
-		this.id = id;
-		this.fname = fname;
-		this.lname = lname;
-		this.address = address;
-	}
-
-	public Student(String fname, String lname, Address address) {
-		super();
-		this.fname = fname;
-		this.lname = lname;
-		this.address = address;
-	}
-
-	public Student() {
-		super();
 	}
 }
