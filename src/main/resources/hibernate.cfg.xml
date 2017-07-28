@@ -11,5 +11,6 @@
 		<property name="hibernate.format_sql">false</property>
 		<property name="hibernate.hbm2ddl.auto">create</property>
 		<mapping class="org.personal.hibernatetutorials.entity.Student" />
+		<mapping class="org.personal.hibernatetutorials.entity.Address" />
 	</session-factory>
 </hibernate-configuration>

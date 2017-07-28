@@ -1,6 +1,7 @@
 package org.personal.hibernatetutorials.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,20 +11,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "studenttbl")
 public class Student {
-	
+
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "studentid")
 	private int id;
-	
+
 	@Column(name = "firstname")
 	private String fname;
-	
+
 	@Column(name = "lastname")
 	private String lname;
-	
-	@Column(name = "address")
-	private String address;
+
+	@Embedded
+	private Address address;
 
 	@Override
 	public String toString() {
@@ -54,15 +55,15 @@ public class Student {
 		this.lname = lname;
 	}
 
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 
-	public Student(int id, String fname, String lname, String address) {
+	public Student(int id, String fname, String lname, Address address) {
 		super();
 		this.id = id;
 		this.fname = fname;
@@ -70,7 +71,7 @@ public class Student {
 		this.address = address;
 	}
 
-	public Student(String fname, String lname, String address) {
+	public Student(String fname, String lname, Address address) {
 		super();
 		this.fname = fname;
 		this.lname = lname;
