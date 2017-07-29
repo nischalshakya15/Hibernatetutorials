@@ -1,5 +1,8 @@
 package org.personal.hibernatetutorials.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,12 +29,19 @@ public class Student {
 	@Column(name = "lastname", length = 20)
 	private String lname;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "addressid")
-	private Address address;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "student_subject", joinColumns = { @JoinColumn(name = "STUDENT_ID") }, inverseJoinColumns = {
+			@JoinColumn(name = "SUBJECT_ID") })
+	private List<Subject> subject = new ArrayList<>();
 
 	public Student() {
 		super();
+	}
+
+	public Student(String fname, String lname) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
 	}
 
 	public int getId() {
@@ -57,14 +68,12 @@ public class Student {
 		this.lname = lname;
 	}
 
-	public Address getAddress() {
-		return address;
+	public List<Subject> getSubject() {
+		return subject;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setSubject(List<Subject> subject) {
+		this.subject = subject;
 	}
-	
-	
 
 }

@@ -6,8 +6,8 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.personal.hibernatetutorials.entity.Address;
 import org.personal.hibernatetutorials.entity.Student;
+import org.personal.hibernatetutorials.entity.Subject;
 
 public class Hibernate {
 
@@ -28,72 +28,32 @@ public class Hibernate {
 
 	public static void insert() {
 		final Session session = openSession();
-		Address addressOne = new Address("kathmandu", "mustang");
-
-		Student studentInsert = new Student();
-		studentInsert.setFname("Nischal");
-		studentInsert.setLname("Shakya");
-		studentInsert.setAddress(addressOne);
-		addressOne.getStudent().add(studentInsert);
-		session.save(addressOne);
+		Student student = new Student("Nischal", "Shakya");
+		Subject subjectOne = new Subject("Computer Science");
+		Subject subjectTwo = new Subject("Math");
+		student.getSubject().add(subjectOne);
+		student.getSubject().add(subjectTwo);
+		session.save(student);
 		closeSession(session);
 	}
 
-	public static void update() {
-		final Session session = openSession();
-		Student studentUpdate = session.get(Student.class, 1);
-		if (studentUpdate != null) {
-			studentUpdate.setFname("rashik");
-			studentUpdate.setLname("shakya");
-			studentUpdate.getAddress().setPermanentAddress("usa");
-			studentUpdate.getAddress().setTemporaryAddress("florida");
-			session.update(studentUpdate);
-		}
-		closeSession(session);
-	}
-
-	public static void delete() {
-		final Session session = openSession();
-		Student studentDelete = session.get(Student.class, 1);
-		if (studentDelete != null) {
-			session.delete(studentDelete);
-		}
-		closeSession(session);
-	}
-
-	public static void displayFromStudent() {
+	public static void display() {
 		final Session session = openSession();
 		@SuppressWarnings("unchecked")
 		List<Student> studentList = session.createQuery("from Student").getResultList();
 		studentList.stream().forEach((listOfStudent) -> {
-			LOGGER.info(listOfStudent.getId() + TAB + listOfStudent.getFname() + TAB + listOfStudent.getLname() + TAB
-					+ listOfStudent.getAddress().getPermanentAddress() + TAB
-					+ listOfStudent.getAddress().getTemporaryAddress());
-		});
-
-	}
-
-	@SuppressWarnings("unchecked")
-	public static void displayFromAddress() {
-		final Session session = openSession();
-		List<Address> addressList = session.createQuery("from Address").getResultList();
-		addressList.stream().forEach((listOfAddress) -> {
-			listOfAddress.getStudent().stream().forEach((listOfStudent) -> {
-				LOGGER.info(listOfAddress.getId() + TAB + listOfAddress.getPermanentAddress() + TAB
-						+ listOfAddress.getTemporaryAddress() + TAB + listOfStudent.getId() + TAB
-						+ listOfStudent.getFname() + TAB + listOfStudent.getLname());
+			listOfStudent.getSubject().stream().forEach((listOfSubject) -> {
+				LOGGER.info(listOfStudent.getId() + TAB + listOfStudent.getFname() + TAB + listOfStudent.getLname()
+						+ TAB + listOfSubject.getId() + TAB + listOfSubject.getSubjectname());
 			});
 		});
+
 	}
 
 	public static void main(String args[]) {
 		insert();
-		displayFromStudent();
-		displayFromAddress();
-		update();
-		displayFromAddress();
-		delete();
-		displayFromStudent();
+		display();
+
 	}
 
 }

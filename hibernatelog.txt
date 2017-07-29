@@ -1,97 +1,52 @@
-2017-07-29 23:22:12 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
-2017-07-29 23:22:12 INFO  Environment:213 - HHH000206: hibernate.properties not found
-2017-07-29 23:22:13 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2017-07-29 23:22:13 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-2017-07-29 23:22:13 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
-2017-07-29 23:22:13 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
-2017-07-29 23:22:13 INFO  pooling:140 - HHH10001003: Autocommit mode: false
-2017-07-29 23:22:13 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
-2017-07-29 23:22:13 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2017-07-29 23:22:14 DEBUG SQL:92 - alter table student drop foreign key FK4w8t89ct34bbchwe57u42dpk
-2017-07-29 23:22:14 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1f2f9244] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2017-07-29 23:22:14 DEBUG SQL:92 - drop table if exists address
-2017-07-29 23:22:14 DEBUG SQL:92 - drop table if exists student
-2017-07-29 23:22:14 DEBUG SQL:92 - create table address (id integer not null auto_increment, peraddress varchar(20), tempaddress varchar(20), primary key (id))
-2017-07-29 23:22:14 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@41e350f1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2017-07-29 23:22:15 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), addressid integer, primary key (studentid))
-2017-07-29 23:22:15 DEBUG SQL:92 - alter table student add constraint FK4w8t89ct34bbchwe57u42dpk foreign key (addressid) references address (id)
-2017-07-29 23:22:16 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4b672daa'
-2017-07-29 23:22:16 DEBUG SQL:92 - insert into address (peraddress, tempaddress) values (?, ?)
-2017-07-29 23:22:16 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [kathmandu]
-2017-07-29 23:22:16 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [mustang]
-2017-07-29 23:22:16 DEBUG SQL:92 - insert into student (addressid, firstname, lastname) values (?, ?, ?)
-2017-07-29 23:22:16 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:16 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Nischal]
-2017-07-29 23:22:16 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [Shakya]
-2017-07-29 23:22:16 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
-2017-07-29 23:22:16 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.addressid as addressi4_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
-2017-07-29 23:22:16 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:16 TRACE BasicExtractor:61 - extracted value ([addressi4_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:16 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [Nischal]
-2017-07-29 23:22:16 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [Shakya]
-2017-07-29 23:22:16 DEBUG SQL:92 - select address0_.id as id1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_ from address address0_ where address0_.id=?
-2017-07-29 23:22:16 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:16 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_0_] : [VARCHAR]) - [kathmandu]
-2017-07-29 23:22:16 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_0_] : [VARCHAR]) - [mustang]
-2017-07-29 23:22:16 INFO  Hibernate:69 - 1	Nischal	Shakya	kathmandu	mustang
-2017-07-29 23:22:17 DEBUG SQL:92 - select address0_.id as id1_0_, address0_.peraddress as peraddre2_0_, address0_.tempaddress as tempaddr3_0_ from address address0_
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([id1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_] : [VARCHAR]) - [kathmandu]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_] : [VARCHAR]) - [mustang]
-2017-07-29 23:22:17 DEBUG SQL:92 - select student0_.addressid as addressi4_1_0_, student0_.studentid as studenti1_1_0_, student0_.studentid as studenti1_1_1_, student0_.addressid as addressi4_1_1_, student0_.firstname as firstnam2_1_1_, student0_.lastname as lastname3_1_1_ from student student0_ where student0_.addressid=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([addressi4_1_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_1_] : [VARCHAR]) - [Nischal]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([lastname3_1_1_] : [VARCHAR]) - [Shakya]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([addressi4_1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([studenti1_1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 INFO  Hibernate:82 - 1	kathmandu	mustang	1	Nischal	Shakya
-2017-07-29 23:22:17 DEBUG SQL:92 - select student0_.studentid as studenti1_1_0_, student0_.addressid as addressi4_1_0_, student0_.firstname as firstnam2_1_0_, student0_.lastname as lastname3_1_0_, address1_.id as id1_0_1_, address1_.peraddress as peraddre2_0_1_, address1_.tempaddress as tempaddr3_0_1_ from student student0_ left outer join address address1_ on student0_.addressid=address1_.id where student0_.studentid=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([id1_0_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([addressi4_1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_0_] : [VARCHAR]) - [Nischal]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([lastname3_1_0_] : [VARCHAR]) - [Shakya]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_1_] : [VARCHAR]) - [kathmandu]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_1_] : [VARCHAR]) - [mustang]
-2017-07-29 23:22:17 DEBUG SQL:92 - update student set addressid=?, firstname=?, lastname=? where studentid=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [rashik]
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [shakya]
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [4] as [INTEGER] - [1]
-2017-07-29 23:22:17 DEBUG SQL:92 - update address set peraddress=?, tempaddress=? where id=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [usa]
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [florida]
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [3] as [INTEGER] - [1]
-2017-07-29 23:22:17 DEBUG SQL:92 - select address0_.id as id1_0_, address0_.peraddress as peraddre2_0_, address0_.tempaddress as tempaddr3_0_ from address address0_
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([id1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_] : [VARCHAR]) - [usa]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_] : [VARCHAR]) - [florida]
-2017-07-29 23:22:17 DEBUG SQL:92 - select student0_.addressid as addressi4_1_0_, student0_.studentid as studenti1_1_0_, student0_.studentid as studenti1_1_1_, student0_.addressid as addressi4_1_1_, student0_.firstname as firstnam2_1_1_, student0_.lastname as lastname3_1_1_ from student student0_ where student0_.addressid=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([addressi4_1_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_1_] : [VARCHAR]) - [rashik]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([lastname3_1_1_] : [VARCHAR]) - [shakya]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([addressi4_1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([studenti1_1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 INFO  Hibernate:82 - 1	usa	florida	1	rashik	shakya
-2017-07-29 23:22:17 DEBUG SQL:92 - select student0_.studentid as studenti1_1_0_, student0_.addressid as addressi4_1_0_, student0_.firstname as firstnam2_1_0_, student0_.lastname as lastname3_1_0_, address1_.id as id1_0_1_, address1_.peraddress as peraddre2_0_1_, address1_.tempaddress as tempaddr3_0_1_ from student student0_ left outer join address address1_ on student0_.addressid=address1_.id where student0_.studentid=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([id1_0_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([addressi4_1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_0_] : [VARCHAR]) - [rashik]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([lastname3_1_0_] : [VARCHAR]) - [shakya]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_1_] : [VARCHAR]) - [usa]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_1_] : [VARCHAR]) - [florida]
-2017-07-29 23:22:17 DEBUG SQL:92 - select student0_.addressid as addressi4_1_0_, student0_.studentid as studenti1_1_0_, student0_.studentid as studenti1_1_1_, student0_.addressid as addressi4_1_1_, student0_.firstname as firstnam2_1_1_, student0_.lastname as lastname3_1_1_ from student student0_ where student0_.addressid=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([addressi4_1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 TRACE BasicExtractor:61 - extracted value ([studenti1_1_0_] : [INTEGER]) - [1]
-2017-07-29 23:22:17 DEBUG SQL:92 - delete from student where studentid=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:17 DEBUG SQL:92 - delete from address where id=?
-2017-07-29 23:22:17 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
-2017-07-29 23:22:17 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.addressid as addressi4_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 23:46:58 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-29 23:46:58 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-29 23:46:58 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-29 23:46:59 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-29 23:46:59 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-29 23:46:59 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-29 23:46:59 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-29 23:46:59 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-29 23:46:59 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-29 23:47:00 DEBUG SQL:92 - alter table student_subject drop foreign key FKohhvlr6luut9adbni0ihgdh2r
+2017-07-29 23:47:00 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@42f48531] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 23:47:00 DEBUG SQL:92 - alter table student_subject drop foreign key FKidi8nloavy22rtxegm9mwl5wn
+2017-07-29 23:47:00 DEBUG SQL:92 - drop table if exists student
+2017-07-29 23:47:00 DEBUG SQL:92 - drop table if exists student_subject
+2017-07-29 23:47:01 DEBUG SQL:92 - drop table if exists subject
+2017-07-29 23:47:01 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), primary key (studentid))
+2017-07-29 23:47:01 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@56bca85b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 23:47:01 DEBUG SQL:92 - create table student_subject (STUDENT_ID integer not null, SUBJECT_ID integer not null)
+2017-07-29 23:47:01 DEBUG SQL:92 - create table subject (id integer not null auto_increment, subjectname varchar(20), primary key (id))
+2017-07-29 23:47:02 DEBUG SQL:92 - alter table student_subject add constraint FKohhvlr6luut9adbni0ihgdh2r foreign key (SUBJECT_ID) references subject (id)
+2017-07-29 23:47:03 DEBUG SQL:92 - alter table student_subject add constraint FKidi8nloavy22rtxegm9mwl5wn foreign key (STUDENT_ID) references student (studentid)
+2017-07-29 23:47:04 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@7c2b6087'
+2017-07-29 23:47:04 DEBUG SQL:92 - insert into student (firstname, lastname) values (?, ?)
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Nischal]
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Shakya]
+2017-07-29 23:47:04 DEBUG SQL:92 - insert into subject (subjectname) values (?)
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Computer Science]
+2017-07-29 23:47:04 DEBUG SQL:92 - insert into subject (subjectname) values (?)
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Math]
+2017-07-29 23:47:04 DEBUG SQL:92 - insert into student_subject (STUDENT_ID, SUBJECT_ID) values (?, ?)
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [1]
+2017-07-29 23:47:04 DEBUG SQL:92 - insert into student_subject (STUDENT_ID, SUBJECT_ID) values (?, ?)
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [2] as [INTEGER] - [2]
+2017-07-29 23:47:04 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-29 23:47:04 DEBUG SQL:92 - select student0_.studentid as studenti1_0_, student0_.firstname as firstnam2_0_, student0_.lastname as lastname3_0_ from student student0_
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([studenti1_0_] : [INTEGER]) - [1]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([firstnam2_0_] : [VARCHAR]) - [Nischal]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([lastname3_0_] : [VARCHAR]) - [Shakya]
+2017-07-29 23:47:04 DEBUG SQL:92 - select subject0_.STUDENT_ID as STUDENT_1_1_0_, subject0_.SUBJECT_ID as SUBJECT_2_1_0_, subject1_.id as id1_2_1_, subject1_.subjectname as subjectn2_2_1_ from student_subject subject0_ inner join subject subject1_ on subject0_.SUBJECT_ID=subject1_.id where subject0_.STUDENT_ID=?
+2017-07-29 23:47:04 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([id1_2_1_] : [INTEGER]) - [1]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([subjectn2_2_1_] : [VARCHAR]) - [Computer Science]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([STUDENT_1_1_0_] : [INTEGER]) - [1]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([SUBJECT_2_1_0_] : [INTEGER]) - [1]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([id1_2_1_] : [INTEGER]) - [2]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([subjectn2_2_1_] : [VARCHAR]) - [Math]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([STUDENT_1_1_0_] : [INTEGER]) - [1]
+2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([SUBJECT_2_1_0_] : [INTEGER]) - [2]
+2017-07-29 23:47:04 INFO  Hibernate:46 - 1	Nischal	Shakya	1	Computer Science
+2017-07-29 23:47:04 INFO  Hibernate:46 - 1	Nischal	Shakya	2	Math
