@@ -32,10 +32,8 @@ public class Hibernate {
 
 		Student studentInsert = new Student();
 		studentInsert.setFname("Nischal");
-		studentInsert.setLname("Shakya");
+		studentInsert.setLname("Shakya");		
 		studentInsert.setAddress(addressOne);
-		addressOne.setStudent(studentInsert);
-
 		session.save(studentInsert);
 		closeSession(session);
 	}
