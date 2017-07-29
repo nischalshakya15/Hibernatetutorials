@@ -6,12 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "studenttbl")
+@Table(name = "student")
 public class Student {
 
 	@Id
@@ -26,7 +26,7 @@ public class Student {
 	private String lname;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
+	@JoinColumn(name = "addressid")
 	private Address address;
 
 	public Student() {
