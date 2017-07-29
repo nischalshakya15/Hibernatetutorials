@@ -20,7 +20,7 @@ public class Hibernate {
 		session.beginTransaction();
 		return session;
 	}
-	
+
 	private static void closeSession(Session session) {
 		session.getTransaction().commit();
 		session.close();
@@ -29,12 +29,12 @@ public class Hibernate {
 	public static void insert() {
 		Session session = openSession();
 		Address addressOne = new Address("kathmandu", "mustang");
-		Address addressTwo = new Address("pokhara", "butwal");
+
 		Student studentInsert = new Student();
 		studentInsert.setFname("Nischal");
 		studentInsert.setLname("Shakya");
-		studentInsert.getListofAddress().add(addressOne);
-		studentInsert.getListofAddress().add(addressTwo);
+		studentInsert.setAddress(addressOne);
+
 		session.save(studentInsert);
 		closeSession(session);
 	}
@@ -45,10 +45,8 @@ public class Hibernate {
 		if (studentUpdate != null) {
 			studentUpdate.setFname("rashik");
 			studentUpdate.setLname("shakya");
-			Address studentAddress = studentUpdate.getListofAddress().get(0);
-			studentAddress.setPermanentAddress("patan");
-			studentAddress.setTemporaryAddress("kathmandu");
-			studentUpdate.getListofAddress().add(studentAddress);
+			studentUpdate.getAddress().setPermanentAddress("usa");
+			studentUpdate.getAddress().setTemporaryAddress("florida");
 			session.update(studentUpdate);
 		}
 		closeSession(session);
@@ -68,10 +66,8 @@ public class Hibernate {
 		@SuppressWarnings("unchecked")
 		List<Student> studentList = session.createQuery("from Student").getResultList();
 		studentList.stream().forEach((listOfStudent) -> {
-			listOfStudent.getListofAddress().stream().forEach(listOfAddress -> {
 				logger.info(listOfStudent.getId() + tab + listOfStudent.getFname() + tab + listOfStudent.getLname()
-						+ tab + listOfAddress.getPermanentAddress() + tab + listOfAddress.getTemporaryAddress());
-			});
+						+ tab + listOfStudent.getAddress().getPermanentAddress() + tab + listOfStudent.getAddress().getTemporaryAddress());
 		});
 
 	}

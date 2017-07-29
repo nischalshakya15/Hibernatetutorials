@@ -1,16 +1,13 @@
 package org.personal.hibernatetutorials.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -27,25 +24,14 @@ public class Student {
 
 	@Column(name = "lastname", length = 20)
 	private String lname;
-	
-	@ElementCollection
-	@JoinTable(name = "address", joinColumns = @JoinColumn(name = "studentid"))	
-	List<Address> listofAddress = new ArrayList<>();
-	
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+	private Address address;
+
 	public Student() {
 		super();
 	}
-	
-	
-
-	public Student(String fname, String lname, List<Address> listofAddress) {
-		super();
-		this.fname = fname;
-		this.lname = lname;
-		this.listofAddress = listofAddress;
-	}
-
-
 
 	public int getId() {
 		return id;
@@ -71,13 +57,12 @@ public class Student {
 		this.lname = lname;
 	}
 
-	public List<Address> getListofAddress() {
-		return listofAddress;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setListofAddress(List<Address> listofAddress) {
-		this.listofAddress = listofAddress;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
-	
-	
+
 }
