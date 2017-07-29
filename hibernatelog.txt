@@ -153,3 +153,268 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'address' already exists
 2017-07-29 08:37:50 DEBUG SQL:92 - delete from address where id=?
 2017-07-29 08:37:50 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [2]
 2017-07-29 08:37:50 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.addressid as addressi4_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:42:54 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-29 08:42:54 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-29 08:42:54 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-29 08:42:54 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-29 08:42:54 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-29 08:42:54 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-29 08:42:54 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-29 08:42:54 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-29 08:42:55 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-29 08:42:55 DEBUG SQL:92 - drop table if exists address
+2017-07-29 08:42:55 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6475472c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:42:55 DEBUG SQL:92 - drop table if exists student
+2017-07-29 08:42:56 DEBUG SQL:92 - create table address (id integer not null auto_increment, peraddress varchar(20), tempaddress varchar(20), primary key (id))
+2017-07-29 08:42:56 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4409e975] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:42:56 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), primary key (studentid))
+2017-07-29 08:42:56 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@312ab28e'
+2017-07-29 08:42:56 DEBUG SQL:92 - insert into student (firstname, lastname) values (?, ?)
+2017-07-29 08:42:57 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Nischal]
+2017-07-29 08:42:57 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Shakya]
+2017-07-29 08:42:57 DEBUG SQL:92 - insert into address (peraddress, tempaddress) values (?, ?)
+2017-07-29 08:42:57 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [kathmandu]
+2017-07-29 08:42:57 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [mustang]
+2017-07-29 08:42:57 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-29 08:42:57 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:42:57 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
+2017-07-29 08:42:57 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [Nischal]
+2017-07-29 08:42:57 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [Shakya]
+2017-07-29 08:42:57 DEBUG SQL:92 - select address0_.id as id1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_, student1_.studentid as studenti1_1_1_, student1_.firstname as firstnam2_1_1_, student1_.lastname as lastname3_1_1_ from address address0_ left outer join student student1_ on address0_.id=student1_.studentid where address0_.id=?
+2017-07-29 08:42:57 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:42:57 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
+2017-07-29 08:42:57 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_0_] : [VARCHAR]) - [kathmandu]
+2017-07-29 08:42:57 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_0_] : [VARCHAR]) - [mustang]
+2017-07-29 08:42:57 INFO  Hibernate:69 - 1	Nischal	Shakya	kathmandu	mustang
+2017-07-29 08:44:52 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-29 08:44:52 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-29 08:44:52 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-29 08:44:52 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-29 08:44:52 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-29 08:44:52 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-29 08:44:52 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-29 08:44:52 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-29 08:44:53 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-29 08:44:53 DEBUG SQL:92 - drop table if exists address
+2017-07-29 08:44:53 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6475472c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:44:54 DEBUG SQL:92 - drop table if exists student
+2017-07-29 08:44:54 DEBUG SQL:92 - create table address (id integer not null auto_increment, peraddress varchar(20), tempaddress varchar(20), primary key (id))
+2017-07-29 08:44:54 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@e98770d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:44:54 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), primary key (studentid))
+2017-07-29 08:44:55 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@765f05af'
+2017-07-29 08:44:55 DEBUG SQL:92 - insert into student (firstname, lastname) values (?, ?)
+2017-07-29 08:44:55 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Nischal]
+2017-07-29 08:44:55 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Shakya]
+2017-07-29 08:44:55 DEBUG SQL:92 - insert into address (peraddress, tempaddress) values (?, ?)
+2017-07-29 08:44:55 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [kathmandu]
+2017-07-29 08:44:55 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [mustang]
+2017-07-29 08:44:55 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-29 08:44:55 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:44:55 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
+2017-07-29 08:44:55 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [Nischal]
+2017-07-29 08:44:55 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [Shakya]
+2017-07-29 08:44:55 DEBUG SQL:92 - select address0_.id as id1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_, student1_.studentid as studenti1_1_1_, student1_.firstname as firstnam2_1_1_, student1_.lastname as lastname3_1_1_ from address address0_ left outer join student student1_ on address0_.id=student1_.studentid where address0_.id=?
+2017-07-29 08:44:55 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:44:55 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
+2017-07-29 08:44:55 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_0_] : [VARCHAR]) - [kathmandu]
+2017-07-29 08:44:55 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_0_] : [VARCHAR]) - [mustang]
+2017-07-29 08:44:55 INFO  Hibernate:70 - 1	Nischal	Shakya	kathmandu	mustang
+2017-07-29 08:46:01 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-29 08:46:01 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-29 08:46:01 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-29 08:46:01 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-29 08:46:01 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-29 08:46:01 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-29 08:46:01 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-29 08:46:01 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-29 08:46:01 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-29 08:46:02 DEBUG SQL:92 - drop table if exists address
+2017-07-29 08:46:02 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c8504fd] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:46:02 DEBUG SQL:92 - drop table if exists student
+2017-07-29 08:46:03 DEBUG SQL:92 - create table address (id integer not null auto_increment, peraddress varchar(20), tempaddress varchar(20), primary key (id))
+2017-07-29 08:46:03 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@57ac5227] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:46:03 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), primary key (studentid))
+2017-07-29 08:46:03 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@18cebaa5'
+2017-07-29 08:46:04 DEBUG SQL:92 - insert into student (firstname, lastname) values (?, ?)
+2017-07-29 08:46:04 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Nischal]
+2017-07-29 08:46:04 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Shakya]
+2017-07-29 08:46:04 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-29 08:46:04 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:46:04 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
+2017-07-29 08:46:04 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [Nischal]
+2017-07-29 08:46:04 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [Shakya]
+2017-07-29 08:46:04 DEBUG SQL:92 - select address0_.id as id1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_, student1_.studentid as studenti1_1_1_, student1_.firstname as firstnam2_1_1_, student1_.lastname as lastname3_1_1_ from address address0_ left outer join student student1_ on address0_.id=student1_.studentid where address0_.id=?
+2017-07-29 08:46:04 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:47:37 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-29 08:47:37 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-29 08:47:37 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-29 08:47:37 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-29 08:47:37 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-29 08:47:37 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-29 08:47:37 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-29 08:47:37 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-29 08:47:37 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-29 08:47:38 DEBUG SQL:92 - drop table if exists address
+2017-07-29 08:47:38 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@57ac5227] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:47:38 DEBUG SQL:92 - drop table if exists student
+2017-07-29 08:47:39 DEBUG SQL:92 - create table address (id integer not null, peraddress varchar(20), tempaddress varchar(20), primary key (id))
+2017-07-29 08:47:39 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2a7686a7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:47:39 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), primary key (studentid))
+2017-07-29 08:47:39 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@246f8b8b'
+2017-07-29 08:47:39 DEBUG SQL:92 - insert into student (firstname, lastname) values (?, ?)
+2017-07-29 08:47:39 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Nischal]
+2017-07-29 08:47:39 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Shakya]
+2017-07-29 08:47:39 DEBUG SQL:92 - insert into address (peraddress, tempaddress, id) values (?, ?, ?)
+2017-07-29 08:47:40 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [kathmandu]
+2017-07-29 08:47:40 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [mustang]
+2017-07-29 08:47:40 TRACE BasicBinder:65 - binding parameter [3] as [INTEGER] - [1]
+2017-07-29 08:47:40 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-29 08:47:40 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:47:40 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
+2017-07-29 08:47:40 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [Nischal]
+2017-07-29 08:47:40 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [Shakya]
+2017-07-29 08:47:40 DEBUG SQL:92 - select address0_.id as id1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_, student1_.studentid as studenti1_1_1_, student1_.firstname as firstnam2_1_1_, student1_.lastname as lastname3_1_1_ from address address0_ left outer join student student1_ on address0_.id=student1_.studentid where address0_.id=?
+2017-07-29 08:47:40 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:47:40 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
+2017-07-29 08:47:40 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_0_] : [VARCHAR]) - [kathmandu]
+2017-07-29 08:47:40 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_0_] : [VARCHAR]) - [mustang]
+2017-07-29 08:47:40 INFO  Hibernate:70 - 1	Nischal	Shakya	kathmandu	mustang
+2017-07-29 08:48:47 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-29 08:48:47 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-29 08:48:47 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-29 08:48:48 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-29 08:48:48 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-29 08:48:48 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-29 08:48:48 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-29 08:48:48 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-29 08:48:48 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-29 08:48:49 DEBUG SQL:92 - drop table if exists address
+2017-07-29 08:48:49 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@33aeca0b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:48:49 DEBUG SQL:92 - drop table if exists student
+2017-07-29 08:48:49 DEBUG SQL:92 - create table address (studentid integer not null, peraddress varchar(20), tempaddress varchar(20), primary key (studentid))
+2017-07-29 08:48:49 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4409e975] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:48:49 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), primary key (studentid))
+2017-07-29 08:48:50 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@312ab28e'
+2017-07-29 08:48:50 DEBUG SQL:92 - insert into student (firstname, lastname) values (?, ?)
+2017-07-29 08:48:50 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Nischal]
+2017-07-29 08:48:50 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Shakya]
+2017-07-29 08:48:50 DEBUG SQL:92 - insert into address (peraddress, tempaddress, studentid) values (?, ?, ?)
+2017-07-29 08:48:50 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [kathmandu]
+2017-07-29 08:48:50 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [mustang]
+2017-07-29 08:48:50 TRACE BasicBinder:65 - binding parameter [3] as [INTEGER] - [1]
+2017-07-29 08:48:50 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-29 08:48:50 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:48:50 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
+2017-07-29 08:48:50 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [Nischal]
+2017-07-29 08:48:50 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [Shakya]
+2017-07-29 08:48:50 DEBUG SQL:92 - select address0_.studentid as studenti1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_, student1_.studentid as studenti1_1_1_, student1_.firstname as firstnam2_1_1_, student1_.lastname as lastname3_1_1_ from address address0_ left outer join student student1_ on address0_.studentid=student1_.studentid where address0_.studentid=?
+2017-07-29 08:48:50 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:48:50 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
+2017-07-29 08:48:50 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_0_] : [VARCHAR]) - [kathmandu]
+2017-07-29 08:48:50 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_0_] : [VARCHAR]) - [mustang]
+2017-07-29 08:48:50 INFO  Hibernate:70 - 1	Nischal	Shakya	kathmandu	mustang
+2017-07-29 08:50:10 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-29 08:50:10 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-29 08:50:10 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-29 08:50:10 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-29 08:50:10 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-29 08:50:10 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-29 08:50:10 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-29 08:50:10 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-29 08:50:11 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-29 08:50:11 DEBUG SQL:92 - drop table if exists address
+2017-07-29 08:50:11 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c18016b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:50:12 DEBUG SQL:92 - drop table if exists student
+2017-07-29 08:50:12 DEBUG SQL:92 - create table address (studentid integer not null, peraddress varchar(20), tempaddress varchar(20), primary key (studentid))
+2017-07-29 08:50:12 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4bc28c33] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:50:12 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), primary key (studentid))
+2017-07-29 08:50:13 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1522d8a0'
+2017-07-29 08:50:13 DEBUG SQL:92 - insert into student (firstname, lastname) values (?, ?)
+2017-07-29 08:50:13 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Nischal]
+2017-07-29 08:50:13 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Shakya]
+2017-07-29 08:50:13 DEBUG SQL:92 - insert into address (peraddress, tempaddress, studentid) values (?, ?, ?)
+2017-07-29 08:50:13 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [kathmandu]
+2017-07-29 08:50:13 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [mustang]
+2017-07-29 08:50:13 TRACE BasicBinder:65 - binding parameter [3] as [INTEGER] - [1]
+2017-07-29 08:50:13 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-29 08:50:13 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:50:13 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
+2017-07-29 08:50:13 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [Nischal]
+2017-07-29 08:50:13 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [Shakya]
+2017-07-29 08:50:13 DEBUG SQL:92 - select address0_.studentid as studenti1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_, student1_.studentid as studenti1_1_1_, student1_.firstname as firstnam2_1_1_, student1_.lastname as lastname3_1_1_ from address address0_ left outer join student student1_ on address0_.studentid=student1_.studentid where address0_.studentid=?
+2017-07-29 08:50:13 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:50:13 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
+2017-07-29 08:50:13 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_0_] : [VARCHAR]) - [kathmandu]
+2017-07-29 08:50:13 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_0_] : [VARCHAR]) - [mustang]
+2017-07-29 08:50:13 INFO  Hibernate:70 - 1	Nischal	Shakya	kathmandu	mustang
+2017-07-29 08:51:25 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-29 08:51:25 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-29 08:51:25 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-29 08:51:25 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-29 08:51:25 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-29 08:51:25 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-29 08:51:25 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-29 08:51:26 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-29 08:51:26 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-29 08:51:27 DEBUG SQL:92 - drop table if exists address
+2017-07-29 08:51:27 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c18016b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:51:27 DEBUG SQL:92 - drop table if exists student
+2017-07-29 08:51:27 DEBUG SQL:92 - create table address (studentid integer not null, peraddress varchar(20), tempaddress varchar(20), primary key (studentid))
+2017-07-29 08:51:27 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4bc28c33] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-29 08:51:27 DEBUG SQL:92 - create table student (studentid integer not null auto_increment, firstname varchar(20), lastname varchar(20), primary key (studentid))
+2017-07-29 08:51:28 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1522d8a0'
+2017-07-29 08:51:28 DEBUG SQL:92 - insert into student (firstname, lastname) values (?, ?)
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [Nischal]
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [Shakya]
+2017-07-29 08:51:28 DEBUG SQL:92 - insert into address (peraddress, tempaddress, studentid) values (?, ?, ?)
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [kathmandu]
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [mustang]
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [3] as [INTEGER] - [1]
+2017-07-29 08:51:28 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-29 08:51:28 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [Nischal]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [Shakya]
+2017-07-29 08:51:28 DEBUG SQL:92 - select address0_.studentid as studenti1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_, student1_.studentid as studenti1_1_1_, student1_.firstname as firstnam2_1_1_, student1_.lastname as lastname3_1_1_ from address address0_ left outer join student student1_ on address0_.studentid=student1_.studentid where address0_.studentid=?
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_0_] : [VARCHAR]) - [kathmandu]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_0_] : [VARCHAR]) - [mustang]
+2017-07-29 08:51:28 INFO  Hibernate:70 - 1	Nischal	Shakya	kathmandu	mustang
+2017-07-29 08:51:28 DEBUG SQL:92 - select student0_.studentid as studenti1_1_0_, student0_.firstname as firstnam2_1_0_, student0_.lastname as lastname3_1_0_, address1_.studentid as studenti1_0_1_, address1_.peraddress as peraddre2_0_1_, address1_.tempaddress as tempaddr3_0_1_ from student student0_ left outer join address address1_ on student0_.studentid=address1_.studentid where student0_.studentid=?
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([studenti1_0_1_] : [INTEGER]) - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_0_] : [VARCHAR]) - [Nischal]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([lastname3_1_0_] : [VARCHAR]) - [Shakya]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_1_] : [VARCHAR]) - [kathmandu]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_1_] : [VARCHAR]) - [mustang]
+2017-07-29 08:51:28 DEBUG SQL:92 - update student set firstname=?, lastname=? where studentid=?
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [rashik]
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [shakya]
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [3] as [INTEGER] - [1]
+2017-07-29 08:51:28 DEBUG SQL:92 - update address set peraddress=?, tempaddress=? where studentid=?
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [usa]
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [florida]
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [3] as [INTEGER] - [1]
+2017-07-29 08:51:28 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([studenti1_1_] : [INTEGER]) - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_] : [VARCHAR]) - [rashik]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([lastname3_1_] : [VARCHAR]) - [shakya]
+2017-07-29 08:51:28 DEBUG SQL:92 - select address0_.studentid as studenti1_0_0_, address0_.peraddress as peraddre2_0_0_, address0_.tempaddress as tempaddr3_0_0_, student1_.studentid as studenti1_1_1_, student1_.firstname as firstnam2_1_1_, student1_.lastname as lastname3_1_1_ from address address0_ left outer join student student1_ on address0_.studentid=student1_.studentid where address0_.studentid=?
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([studenti1_1_1_] : [INTEGER]) - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_0_] : [VARCHAR]) - [usa]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_0_] : [VARCHAR]) - [florida]
+2017-07-29 08:51:28 INFO  Hibernate:70 - 1	rashik	shakya	usa	florida
+2017-07-29 08:51:28 DEBUG SQL:92 - select student0_.studentid as studenti1_1_0_, student0_.firstname as firstnam2_1_0_, student0_.lastname as lastname3_1_0_, address1_.studentid as studenti1_0_1_, address1_.peraddress as peraddre2_0_1_, address1_.tempaddress as tempaddr3_0_1_ from student student0_ left outer join address address1_ on student0_.studentid=address1_.studentid where student0_.studentid=?
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([studenti1_0_1_] : [INTEGER]) - [1]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([firstnam2_1_0_] : [VARCHAR]) - [rashik]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([lastname3_1_0_] : [VARCHAR]) - [shakya]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([peraddre2_0_1_] : [VARCHAR]) - [usa]
+2017-07-29 08:51:28 TRACE BasicExtractor:61 - extracted value ([tempaddr3_0_1_] : [VARCHAR]) - [florida]
+2017-07-29 08:51:28 DEBUG SQL:92 - delete from address where studentid=?
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:51:28 DEBUG SQL:92 - delete from student where studentid=?
+2017-07-29 08:51:28 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-07-29 08:51:28 DEBUG SQL:92 - select student0_.studentid as studenti1_1_, student0_.firstname as firstnam2_1_, student0_.lastname as lastname3_1_ from student student0_

@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -25,8 +24,7 @@ public class Student {
 	@Column(name = "lastname", length = 20)
 	private String lname;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "addressid")
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "student")
 	private Address address;
 
 	public Student() {
