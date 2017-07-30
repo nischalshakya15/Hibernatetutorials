@@ -1,13 +1,13 @@
 package org.personal.hibernatetutorials.main;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.personal.hibernatetutorials.entity.Student;
-import org.personal.hibernatetutorials.entity.Subject;
+import org.personal.hibernatetutorials.entity.DateAndTime;
 
 public class Hibernate {
 
@@ -28,32 +28,27 @@ public class Hibernate {
 
 	public static void insert() {
 		final Session session = openSession();
-		Student student = new Student("Nischal", "Shakya");
-		Subject subjectOne = new Subject("Computer Science");
-		Subject subjectTwo = new Subject("Math");
-		student.getSubject().add(subjectOne);
-		student.getSubject().add(subjectTwo);
-		session.save(student);
+		Date now = new Date();
+		DateAndTime date = new DateAndTime();
+		date.setDate(now);
+		date.setTime(now);
+		date.setDateTime(now);
+		session.save(date);
 		closeSession(session);
 	}
-
-	public static void display() {
+	
+	@SuppressWarnings("unchecked")
+	public static void display(){
 		final Session session = openSession();
-		@SuppressWarnings("unchecked")
-		List<Student> studentList = session.createQuery("from Student").getResultList();
-		studentList.stream().forEach((listOfStudent) -> {
-			listOfStudent.getSubject().stream().forEach((listOfSubject) -> {
-				LOGGER.info(listOfStudent.getId() + TAB + listOfStudent.getFname() + TAB + listOfStudent.getLname()
-						+ TAB + listOfSubject.getId() + TAB + listOfSubject.getSubjectname());
-			});
+		List<DateAndTime> dateAndTimeList = session.createQuery("from DateAndTime").getResultList();
+		dateAndTimeList.stream().forEach((listOfDateAndTime)->{
+			LOGGER.info(listOfDateAndTime.getId() +TAB+ listOfDateAndTime.getDate() +TAB+ listOfDateAndTime.getTime() +TAB+ listOfDateAndTime.getDateTime());
 		});
-
 	}
 
 	public static void main(String args[]) {
-		insert();
+		insert();	
 		display();
-
 	}
 
 }

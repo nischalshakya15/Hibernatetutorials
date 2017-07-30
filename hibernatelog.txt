@@ -50,3 +50,55 @@
 2017-07-29 23:47:04 TRACE BasicExtractor:61 - extracted value ([SUBJECT_2_1_0_] : [INTEGER]) - [2]
 2017-07-29 23:47:04 INFO  Hibernate:46 - 1	Nischal	Shakya	1	Computer Science
 2017-07-29 23:47:04 INFO  Hibernate:46 - 1	Nischal	Shakya	2	Math
+2017-07-30 11:00:13 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-30 11:00:13 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-30 11:00:15 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-30 11:00:15 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-30 11:00:15 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-30 11:00:15 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-30 11:00:15 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-30 11:00:15 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-30 11:00:16 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-30 11:00:54 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-30 11:00:54 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-30 11:00:54 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-30 11:00:55 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-30 11:00:55 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-30 11:00:55 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-30 11:00:55 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-30 11:00:55 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-30 11:00:55 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-30 11:00:56 DEBUG SQL:92 - drop table if exists DateAndTime
+2017-07-30 11:00:56 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2e554a3b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-30 11:00:56 DEBUG SQL:92 - create table DateAndTime (id integer not null auto_increment, date date, dateTime datetime, time time, primary key (id))
+2017-07-30 11:00:56 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@256f8274] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-30 11:00:56 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@6c5945a7'
+2017-07-30 11:00:56 DEBUG SQL:92 - insert into DateAndTime (date, dateTime, time) values (?, ?, ?)
+2017-07-30 11:00:56 TRACE BasicBinder:65 - binding parameter [1] as [DATE] - [Sun Jul 30 11:00:56 NPT 2017]
+2017-07-30 11:00:56 TRACE BasicBinder:65 - binding parameter [2] as [TIMESTAMP] - [Sun Jul 30 11:00:56 NPT 2017]
+2017-07-30 11:00:56 TRACE BasicBinder:65 - binding parameter [3] as [TIME] - [Sun Jul 30 11:00:56 NPT 2017]
+2017-07-30 11:09:15 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-07-30 11:09:15 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-07-30 11:09:15 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-30 11:09:15 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-07-30 11:09:15 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-07-30 11:09:15 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-07-30 11:09:15 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-07-30 11:09:15 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-07-30 11:09:16 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-07-30 11:09:16 DEBUG SQL:92 - drop table if exists DateAndTime
+2017-07-30 11:09:16 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2e554a3b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-30 11:09:17 DEBUG SQL:92 - create table DateAndTime (id integer not null auto_increment, date date, dateTime datetime, time time, primary key (id))
+2017-07-30 11:09:17 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@349c1daf] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-07-30 11:09:17 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@6955cb39'
+2017-07-30 11:09:17 DEBUG SQL:92 - insert into DateAndTime (date, dateTime, time) values (?, ?, ?)
+2017-07-30 11:09:17 TRACE BasicBinder:65 - binding parameter [1] as [DATE] - [Sun Jul 30 11:09:17 NPT 2017]
+2017-07-30 11:09:17 TRACE BasicBinder:65 - binding parameter [2] as [TIMESTAMP] - [Sun Jul 30 11:09:17 NPT 2017]
+2017-07-30 11:09:17 TRACE BasicBinder:65 - binding parameter [3] as [TIME] - [Sun Jul 30 11:09:17 NPT 2017]
+2017-07-30 11:09:17 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-07-30 11:09:17 DEBUG SQL:92 - select dateandtim0_.id as id1_0_, dateandtim0_.date as date2_0_, dateandtim0_.dateTime as dateTime3_0_, dateandtim0_.time as time4_0_ from DateAndTime dateandtim0_
+2017-07-30 11:09:17 TRACE BasicExtractor:61 - extracted value ([id1_0_] : [INTEGER]) - [1]
+2017-07-30 11:09:17 TRACE BasicExtractor:61 - extracted value ([date2_0_] : [DATE]) - [2017-07-30]
+2017-07-30 11:09:17 TRACE BasicExtractor:61 - extracted value ([dateTime3_0_] : [TIMESTAMP]) - [2017-07-30 11:09:17.0]
+2017-07-30 11:09:17 TRACE BasicExtractor:61 - extracted value ([time4_0_] : [TIME]) - [11:09:17]
+2017-07-30 11:09:17 INFO  Hibernate:45 - 1	2017-07-30	11:09:17	2017-07-30 11:09:17.0

@@ -10,7 +10,7 @@
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">false</property>
 		<property name="hibernate.hbm2ddl.auto">create</property>
-		<mapping class="org.personal.hibernatetutorials.entity.Student" />
-		<mapping class="org.personal.hibernatetutorials.entity.Subject" />
+		<mapping class="org.personal.hibernatetutorials.entity.DateAndTime" />
+		
 	</session-factory>
 </hibernate-configuration>
