@@ -1437,3 +1437,171 @@
 2017-08-01 16:18:28 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [dallu]
 2017-08-01 16:18:28 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [nischal]
 2017-08-01 16:18:28 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [shakya]
+2017-08-01 16:21:15 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-01 16:21:15 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-01 16:21:16 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-01 16:21:16 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-01 16:21:16 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-01 16:21:16 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-01 16:21:16 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-01 16:21:16 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-01 16:21:16 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-01 16:21:17 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60641ec8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-01 16:21:17 DEBUG SQL:92 - insert into studenttbl (address, firstname, lastname) values (?, ?, ?)
+2017-08-01 16:21:17 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [dallu]
+2017-08-01 16:21:17 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [nischal]
+2017-08-01 16:21:17 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [shakya]
+2017-08-01 16:21:27 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-01 16:21:27 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-01 16:21:27 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-01 16:21:28 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-01 16:21:28 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-01 16:21:28 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-01 16:21:28 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-01 16:21:28 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-01 16:21:28 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-01 16:21:29 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60641ec8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-01 16:21:29 DEBUG SQL:92 - select student0_.studentid as studenti1_0_0_, student0_.address as address2_0_0_, student0_.firstname as firstnam3_0_0_, student0_.lastname as lastname4_0_0_ from studenttbl student0_ where student0_.studentid=?
+2017-08-01 16:21:29 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-08-01 16:21:29 TRACE BasicExtractor:61 - extracted value ([address2_0_0_] : [VARCHAR]) - [kathmandu]
+2017-08-01 16:21:29 TRACE BasicExtractor:61 - extracted value ([firstnam3_0_0_] : [VARCHAR]) - [rashik]
+2017-08-01 16:21:29 TRACE BasicExtractor:61 - extracted value ([lastname4_0_0_] : [VARCHAR]) - [maharjan]
+2017-08-02 14:29:29 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-02 14:29:29 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-02 14:29:30 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-02 14:29:30 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-02 14:29:30 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-02 14:29:30 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-02 14:29:30 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-02 14:29:30 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-02 14:29:31 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-02 14:29:32 DEBUG SQL:92 - drop table if exists studenttbl
+2017-08-02 14:29:32 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6f0b0a5e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:29:32 DEBUG SQL:92 - create table studenttbl (studentid integer not null auto_increment, address varchar(255), firstname varchar(255), lastname varchar(255), primary key (studentid))
+2017-08-02 14:29:32 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c00384f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:29:32 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@7b8233cd'
+2017-08-02 14:29:33 DEBUG SQL:92 - select student0_.studentid as studenti1_0_0_, student0_.address as address2_0_0_, student0_.firstname as firstnam3_0_0_, student0_.lastname as lastname4_0_0_ from studenttbl student0_ where student0_.studentid=?
+2017-08-02 14:29:33 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-08-02 14:29:33 DEBUG SQL:92 - select student0_.studentid as studenti1_0_0_, student0_.address as address2_0_0_, student0_.firstname as firstnam3_0_0_, student0_.lastname as lastname4_0_0_ from studenttbl student0_ where student0_.studentid=?
+2017-08-02 14:29:33 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-08-02 14:29:33 DEBUG SQL:92 - insert into studenttbl (address, firstname, lastname) values (?, ?, ?)
+2017-08-02 14:29:33 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [dallu]
+2017-08-02 14:29:33 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [nischal]
+2017-08-02 14:29:33 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [shakya]
+2017-08-02 14:30:05 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-02 14:30:05 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-02 14:30:05 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-02 14:30:05 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-02 14:30:05 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-02 14:30:05 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-02 14:30:05 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-02 14:30:05 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-02 14:30:06 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-02 14:30:07 DEBUG SQL:92 - drop table if exists studenttbl
+2017-08-02 14:30:07 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abf688e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:30:07 DEBUG SQL:92 - create table studenttbl (studentid integer not null auto_increment, address varchar(255), firstname varchar(255), lastname varchar(255), primary key (studentid))
+2017-08-02 14:30:07 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3f792b9b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:30:07 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1af146'
+2017-08-02 14:30:07 DEBUG SQL:92 - insert into studenttbl (address, firstname, lastname) values (?, ?, ?)
+2017-08-02 14:30:07 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [dallu]
+2017-08-02 14:30:07 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [nischal]
+2017-08-02 14:30:07 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [shakya]
+2017-08-02 14:30:24 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-02 14:30:24 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-02 14:30:25 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-02 14:30:25 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-02 14:30:25 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-02 14:30:25 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-02 14:30:25 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-02 14:30:25 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-02 14:30:25 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-02 14:30:26 DEBUG SQL:92 - drop table if exists studenttbl
+2017-08-02 14:30:26 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abf688e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:30:27 DEBUG SQL:92 - create table studenttbl (studentid integer not null auto_increment, address varchar(255), firstname varchar(255), lastname varchar(255), primary key (studentid))
+2017-08-02 14:30:27 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3f792b9b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:30:27 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1af146'
+2017-08-02 14:30:27 DEBUG SQL:92 - select student0_.studentid as studenti1_0_0_, student0_.address as address2_0_0_, student0_.firstname as firstnam3_0_0_, student0_.lastname as lastname4_0_0_ from studenttbl student0_ where student0_.studentid=?
+2017-08-02 14:30:27 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-08-02 14:30:47 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-02 14:30:47 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-02 14:30:47 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-02 14:30:47 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-02 14:30:47 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-02 14:30:47 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-02 14:30:47 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-02 14:30:47 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-02 14:30:48 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-02 14:30:48 DEBUG SQL:92 - drop table if exists studenttbl
+2017-08-02 14:30:48 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abf688e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:30:48 DEBUG SQL:92 - create table studenttbl (studentid integer not null auto_increment, address varchar(255), firstname varchar(255), lastname varchar(255), primary key (studentid))
+2017-08-02 14:30:48 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3f792b9b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:30:49 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1af146'
+2017-08-02 14:30:49 DEBUG SQL:92 - select student0_.studentid as studenti1_0_0_, student0_.address as address2_0_0_, student0_.firstname as firstnam3_0_0_, student0_.lastname as lastname4_0_0_ from studenttbl student0_ where student0_.studentid=?
+2017-08-02 14:30:49 TRACE BasicBinder:65 - binding parameter [1] as [INTEGER] - [1]
+2017-08-02 14:36:41 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-02 14:36:41 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-02 14:36:41 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-02 14:36:41 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-02 14:36:41 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-02 14:36:41 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-02 14:36:41 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-02 14:36:41 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-02 14:36:42 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-02 14:36:42 DEBUG SQL:92 - drop table if exists studenttbl
+2017-08-02 14:36:42 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abf688e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:36:43 DEBUG SQL:92 - create table studenttbl (studentid integer not null auto_increment, address varchar(255), firstname varchar(255), lastname varchar(255), primary key (studentid))
+2017-08-02 14:36:43 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3f792b9b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:36:43 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1af146'
+2017-08-02 14:36:43 DEBUG SQL:92 - insert into studenttbl (address, firstname, lastname) values (?, ?, ?)
+2017-08-02 14:36:43 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [dallu]
+2017-08-02 14:36:43 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [nischal]
+2017-08-02 14:36:43 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [shakya]
+2017-08-02 14:36:59 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-02 14:36:59 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-02 14:37:00 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-02 14:37:00 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-02 14:37:00 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-02 14:37:00 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-02 14:37:00 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-02 14:37:00 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-02 14:37:01 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-02 14:37:02 DEBUG SQL:92 - drop table if exists studenttbl
+2017-08-02 14:37:02 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abf688e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:37:02 DEBUG SQL:92 - create table studenttbl (studentid integer not null auto_increment, address varchar(255), firstname varchar(255), lastname varchar(255), primary key (studentid))
+2017-08-02 14:37:02 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3f792b9b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:37:02 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1af146'
+2017-08-02 14:37:03 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-02 14:37:27 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-02 14:37:27 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-02 14:37:27 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-02 14:37:27 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-02 14:37:27 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-02 14:37:27 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-02 14:37:27 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-02 14:37:27 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-02 14:37:28 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-02 14:37:28 DEBUG SQL:92 - drop table if exists studenttbl
+2017-08-02 14:37:28 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@abf688e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:37:29 DEBUG SQL:92 - create table studenttbl (studentid integer not null auto_increment, address varchar(255), firstname varchar(255), lastname varchar(255), primary key (studentid))
+2017-08-02 14:37:29 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3f792b9b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:37:29 INFO  SchemaCreatorImpl:488 - HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@1af146'
+2017-08-02 14:37:29 DEBUG SQL:92 - insert into studenttbl (address, firstname, lastname) values (?, ?, ?)
+2017-08-02 14:37:29 TRACE BasicBinder:65 - binding parameter [1] as [VARCHAR] - [dallu]
+2017-08-02 14:37:29 TRACE BasicBinder:65 - binding parameter [2] as [VARCHAR] - [nischal]
+2017-08-02 14:37:29 TRACE BasicBinder:65 - binding parameter [3] as [VARCHAR] - [shakya]
+2017-08-02 14:37:55 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2017-08-02 14:37:55 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-08-02 14:37:56 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-02 14:37:56 WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-08-02 14:37:56 INFO  pooling:126 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hibernatetutorials]
+2017-08-02 14:37:56 INFO  pooling:135 - HHH10001001: Connection properties: {user=root, password=****}
+2017-08-02 14:37:56 INFO  pooling:140 - HHH10001003: Autocommit mode: false
+2017-08-02 14:37:56 INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-08-02 14:37:56 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-02 14:37:57 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60641ec8] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2017-08-02 14:37:58 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-02 14:37:58 DEBUG SQL:92 - select student0_.studentid as studenti1_0_, student0_.address as address2_0_, student0_.firstname as firstnam3_0_, student0_.lastname as lastname4_0_ from studenttbl student0_
+2017-08-02 14:37:58 TRACE BasicExtractor:61 - extracted value ([studenti1_0_] : [INTEGER]) - [1]
+2017-08-02 14:37:58 TRACE BasicExtractor:61 - extracted value ([address2_0_] : [VARCHAR]) - [dallu]
+2017-08-02 14:37:58 TRACE BasicExtractor:61 - extracted value ([firstnam3_0_] : [VARCHAR]) - [nischal]
+2017-08-02 14:37:58 TRACE BasicExtractor:61 - extracted value ([lastname4_0_] : [VARCHAR]) - [shakya]

@@ -2,6 +2,8 @@ package org.personal.hibernatetutorials.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -34,8 +36,8 @@ public class HibernateTest {
 	@Test
 	public void updateTest() {
 		Session session = openSession();
-		Student student = session.get(Student.class, 1);
-		
+		Student student = findOne(session);
+
 		assertEquals(1, student.getId());
 		assertEquals("nischal", student.getFname());
 		assertEquals("shakya", student.getLname());
@@ -47,6 +49,33 @@ public class HibernateTest {
 		session.update(student);
 		closeSession(session);
 
+	}
+
+	@Test
+	public void deleteTest() {
+		Session session = openSession();
+		Student student = findOne(session);
+		if (student != null) {
+			session.delete(student);
+		}
+		closeSession(session);
+	}
+
+	@Test
+	public void displayTest() {
+		Session session = openSession();
+		@SuppressWarnings("unchecked")
+		List<Student> listOfStudent = session.createQuery("from Student").getResultList();
+		listOfStudent.stream().forEach((studentList) -> {
+			assertEquals(1, studentList.getId());
+			assertEquals("nischal", studentList.getFname());
+			assertEquals("shakya", studentList.getLname());
+			assertEquals("dallu", studentList.getAddress());
+		});
+	}
+
+	private Student findOne(Session session) {
+		return session.get(Student.class, 1);
 	}
 
 }
